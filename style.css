@@ -1,0 +1,842 @@
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+}
+
+/* Nav Bar Styles */
+/* Nav Bar Styles */
+.navbar {
+    background: linear-gradient(to right, #afd1f5, #75b4f2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #f4f5f5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: #E0E0E0;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #f6f0f0;
+    text-transform: uppercase;
+    position: relative;
+    padding: 10px 15px !important;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    letter-spacing: 1px;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #fcfcfe;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Section Fade-in Animation */
+section {
+    opacity: 1; /* Changed to 0 for initial fade-in effect */
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    padding: 100px 0;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive adjustments for Nav Bar */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: linear-gradient(to right, #afd1f5, #75b4f2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    .nav-link {
+        color: #fff;
+        text-align: center;
+    }
+
+    .nav-link::after {
+        background: #fff;
+    }
+}
+
+/* Responsive adjustments for Hero Section */
+@media (max-width: 991.98px) {
+    .hero-img {
+        width: 250px;
+        height: 250px;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    .hero-section {
+        padding-top: 8rem;
+    }
+}
+
+/* Responsive adjustments for other sections */
+@media (max-width: 767.98px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .subsection-title {
+        font-size: 1.5rem;
+    }
+    .lead {
+        font-size: 1rem;
+    }
+    .timeline::before {
+        left: 10px;
+    }
+    .timeline-dot {
+        left: 4.5px;
+    }
+    .timeline-item {
+        padding-left: 20px;
+    }
+}
+
+
+
+/* Personal Info Section Styles  start*/
+.personal-info-section {
+    background: #f8f9fa;
+}
+
+.card-personal-info {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-list strong {
+    font-weight: 600;
+    color: #005A9C;
+    margin-right: 10px;
+}
+/* Personal Info Section Styles  end*/
+
+
+/* Web Addresses Section Styles start */
+.web-addresses-section {
+    background: #ffffff;
+}
+
+.card-web-addresses {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.links-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+.links-list li:last-child {
+    border-bottom: none;
+}
+
+.links-list strong {
+    font-weight: 600;
+    color: #005A9C;
+    margin-right: 10px;
+    width: 120px; /* Adjust width to align text */
+}
+
+.web-icon {
+    font-size: 1.5rem;
+    color: #005A9C;
+    width: 30px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.links-list a {
+    color: #555555;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.links-list a:hover {
+    color: #00BFA5;
+    text-decoration: underline;
+}
+
+/* Ensure Font Awesome is included for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+
+/* Web Addresses Section Styles end */
+
+
+/* Hero Section Styles start============================== */
+.hero-section {
+    background: linear-gradient(to bottom, #F0F2F5, #E6F0F8);
+    min-height: 100vh; /* This property is now active */
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.hero-img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border: 8px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #005A9C;
+}
+
+.hero-subtitle {
+    font-size: 1.75rem;
+    color: #333333;
+    font-weight: 500;
+}
+
+.hero-tagline {
+    font-style: italic;
+    color: #555555;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #005A9C;
+    border-color: #005A9C;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #00BFA5;
+    border-color: #00BFA5;
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+    color: #005A9C;
+    border-color: #005A9C;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #005A9C;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .hero-img {
+        width: 250px;
+        height: 250px;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    .hero-section {
+        padding-top: 8rem;
+    }
+}
+
+/* =========== Hero section end ==============  */
+
+/* About Section Styles  start=================*/
+.about-section {
+    background: #ffffff;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #005A9C;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: #00BFA5;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.subsection-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #005A9C;
+    margin-bottom: 20px;
+}
+
+.education-list li,
+.achievements-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+.education-list li:last-child,
+.achievements-list li:last-child {
+    border-bottom: none;
+}
+
+.education-list li:hover,
+.achievements-list li:hover {
+    background-color: #f8f9fa;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: #555555;
+    text-align: justify;
+}
+.objective-list {
+    font-size: 1rem;
+    color: #555555;
+    text-align: justify;
+    padding-left: 20px;
+}
+
+.objective-list li {
+    margin-bottom: 5px;
+}
+/* About Section Styles  end=================*/
+
+/* ======= Research section Styles start ============  */
+    .research-section {
+        background: #f8f9fa;
+    }
+
+    .research-interests-list {
+        padding-left: 20px;
+    }
+
+    .research-interests-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 10px;
+    }
+
+    .research-interests-list li::before {
+        content: '•';
+        color: #005A9C;
+        font-size: 1.5rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    /* Timeline Styles */
+    .timeline {
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 20px;
+        width: 2px;
+        height: 100%;
+        background: #e0e0e0;
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 30px;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: #00BFA5;
+        border-radius: 50%;
+        left: 14.5px;
+        top: 5px;
+        z-index: 1;
+    }
+
+    .timeline-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .timeline-content h5 {
+        font-weight: bold;
+        color: #005A9C;
+    }
+
+    .timeline-content p {
+        margin: 0;
+    }
+
+    .timeline-date {
+        font-style: italic;
+        color: #888;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 767.98px) {
+        .timeline::before {
+            left: 10px;
+        }
+
+        .timeline-dot {
+            left: 4.5px;
+        }
+
+        .timeline-item {
+            padding-left: 20px;
+        }
+    }
+/* ======= Research section Styles end ============  */
+
+/* ============= publication section Styles start =============  */
+.publications-section {
+    background: #ffffff;
+}
+
+.publications-list,
+.conference-list {
+    padding-left: 0;
+}
+
+.publications-list .list-group-item,
+.conference-list .list-group-item {
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.publications-list .list-group-item:hover,
+.conference-list .list-group-item:hover {
+    background-color: #eef1f4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.publication-title,
+.conference-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #005A9C;
+    margin-bottom: 5px;
+}
+
+.publication-details,
+.conference-details {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.publication-details a {
+    color: #005A9C;
+    text-decoration: none;
+}
+
+.publication-details a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure subsection title is bold and clear */
+.card-header h3 {
+    font-weight: bold;
+    color: #005A9C;
+}
+/* ============= publication section Styles end=============  */
+
+/* Conferences Section Styles start */
+.conferences-section {
+    background: #f8f9fa;
+}
+
+.card-conference {
+    border-left: 5px solid #005A9C;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-conference:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.conference-date {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.conference-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #005A9C;
+    margin-bottom: 5px;
+}
+
+.conference-location {
+    font-size: 1rem;
+    color: #555555;
+}
+
+/* Conferences Section Styles end */
+
+/* Webinars Section Styles start */
+.webinars-section {
+    background: #ffffff; /* Or another light color to differentiate from the previous section */
+}
+
+.card-webinar {
+    border-left: 5px solid #005A9C;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-webinar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.webinar-date {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.webinar-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #005A9C;
+    margin-bottom: 5px;
+}
+
+.webinar-organizer {
+    font-size: 1rem;
+    color: #555555;
+}
+/* Webinars Section Styles end */
+
+
+/* Faculty Development Programme (FDP) start */
+.fdp-section {
+    background: #ffffff; 
+}
+
+.card-fdp {
+    border-left: 5px solid #00BFA5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-fdp:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.fdp-date {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.fdp-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #005A9C;
+    margin-bottom: 5px;
+}
+
+.fdp-organizer {
+    font-size: 1rem;
+    color: #555555;
+}
+
+/* Faculty Development Programme (FDP) end */
+
+
+/*  Computer Skills Section Styles  start*/
+.skills-section {
+    background: #f8f9fa;
+}
+
+.card-skills {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-skills:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-skills .card-title {
+    font-weight: bold;
+    color: #005A9C;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.card-skills .card-title::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: #00BFA5;
+    bottom: -8px;
+    left: 0;
+    border-radius: 2px;
+}
+
+.skills-icon {
+    font-size: 1.25rem;
+    color: #00BFA5;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.card-skills ul {
+    padding-left: 0;
+}
+
+.card-skills li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #555555;
+    display: flex;
+    align-items: center;
+}
+
+/*  Computer Skills Section Styles  end*/
+
+
+/* Teaching and research Plan Section Styles start */
+.plan-section {
+    background: #ffffff;
+}
+
+.plan-card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1.25rem 1.5rem;
+}
+
+.plan-card .card-body p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+/* Teaching and research Plan Section Styles end */
+
+
+/* References Section Styles start*/
+.references-section {
+    background: #f8f9fa;
+}
+
+.card-reference {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-reference:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.reference-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #005A9C;
+    margin-bottom: 0.5rem;
+}
+
+.reference-details {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.5;
+}
+
+.reference-details a {
+    color: #005A9C;
+    text-decoration: none;
+}
+
+.reference-details a:hover {
+    text-decoration: underline;
+}
+
+/* References Section Styles end */
+
+
+
+/* ============ Contact section style start ============ */
+.contact-section {
+    background: #f8f9fa;
+}
+
+.contact-info li,
+.web-addresses li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: #005A9C;
+    width: 30px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.contact-info a,
+.web-addresses a {
+    color: #005A9C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover,
+.web-addresses a:hover {
+    color: #00BFA5;
+    text-decoration: underline;
+}
+
+.web-addresses strong {
+    margin-right: 5px;
+    color: #333333;
+}
+/* ============ Contact section style end ============ */
+
+
+/* ======= Footer section start css ====== */
+/* Footer Styles */
+.footer {
+    background: linear-gradient(to right, #F0F2F5, #E6F0F8);
+    color: #333333;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.footer .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer p {
+    font-size: 0.9rem;
+}
+
+.social-icon {
+    color: #005A9C;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #00BFA5;
+    transform: translateY(-2px);
+}
+/* ======= Footer section end ====== */
+
+
+
+
+
